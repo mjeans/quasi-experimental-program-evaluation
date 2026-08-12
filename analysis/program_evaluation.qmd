@@ -1,0 +1,55 @@
+---
+title: "Quasi-experimental program evaluation"
+subtitle: "A reproducible ATT analysis using synthetic administrative data"
+author: "Matthew Jeans"
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  echo: true
+  warning: false
+---
+
+## Purpose
+
+This report demonstrates how I would structure an observational program evaluation when participation is not randomly assigned. The data are synthetic; the design choices and diagnostic sequence mirror a real evaluation workflow.
+
+## Analysis sequence
+
+~~~{r}
+#| label: run-analysis
+source("../R/01_generate_synthetic_data.R")
+source("../R/02_estimate_effects.R")
+source("../R/03_diagnostics.R")
+~~~
+
+## Covariate balance
+
+~~~{r}
+#| label: balance-results
+balance <- readr::read_csv(
+  "../outputs/balance_table.csv",
+  show_col_types = FALSE
+)
+knitr::kable(balance, digits = 3)
+~~~
+
+Balance is assessed using absolute standardized mean differences, with 0.10 used as a diagnostic threshold rather than a mechanical guarantee of exchangeability.
+
+## Effect estimates
+
+~~~{r}
+#| label: effect-results
+effects <- readr::read_csv(
+  "../outputs/effect_estimates.csv",
+  show_col_types = FALSE
+)
+knitr::kable(effects, digits = 3)
+~~~
+
+Agreement across matched, weighted, and regression-adjusted estimates is treated as a robustness signal. It does not resolve possible bias from unmeasured confounders.
+
+## What I would add with real data
+
+A production evaluation would add a missing-data plan, attrition analysis, outcome specification checks, sensitivity analysis for unmeasured confounding, subgroup estimates defined before modeling, and a data-provenance appendix.

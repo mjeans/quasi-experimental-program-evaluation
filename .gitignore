@@ -1,0 +1,7 @@
+.Rhistory
+.RData
+.Rproj.user/
+data/synthetic_program_data.csv
+outputs/*.csv
+outputs/*.png
+analysis/*.html

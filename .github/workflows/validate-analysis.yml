@@ -1,0 +1,29 @@
+name: Validate analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  run-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - name: Install dependencies
+        run: >-
+          Rscript -e 'install.packages(c("cobalt", "dplyr", "ggplot2", "lmtest", "MatchIt", "readr", "sandwich", "tibble"))'
+      - name: Generate data and estimate effects
+        run: |
+          Rscript R/01_generate_synthetic_data.R
+          Rscript R/02_estimate_effects.R
+          Rscript R/03_diagnostics.R
+      - name: Confirm required outputs
+        run: >-
+          Rscript -e 'stopifnot(file.exists("outputs/effect_estimates.csv"), file.exists("outputs/balance_table.csv"), file.exists("outputs/love_plot.png"), file.exists("outputs/propensity_overlap.png"))'
