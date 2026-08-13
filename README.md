@@ -4,6 +4,8 @@ A reproducible evaluation of a hypothetical service program using synthetic admi
 
 This is a portfolio demonstration. The data are generated in the repository and do not represent a real organization, client, or participant.
 
+![Quasi-experimental evaluation design](assets/evaluation-design.svg)
+
 ## Evaluation question
 
 Among eligible participants, what was the effect of program participation on the follow-up outcome after accounting for observed baseline differences between participants and nonparticipants?
