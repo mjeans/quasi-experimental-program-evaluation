@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Quasi-experimental evaluation design</title>
+  <desc id="desc">A design-first workflow showing eligibility, propensity score estimation, matched comparison, balance diagnostics, and triangulated ATT estimation.</desc>
+  <rect width="1200" height="675" fill="#F8FAFC"/>
+  <rect width="1200" height="92" fill="#0F172A"/>
+  <text x="54" y="46" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="700">Quasi-Experimental Program Evaluation</text>
+  <text x="54" y="73" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="16">A design-first workflow for estimating the average treatment effect on participants</text>
+  <g font-family="Arial, sans-serif">
+    <text x="54" y="137" fill="#334155" font-size="15" font-weight="700" letter-spacing="1">EVALUATION WORKFLOW</text>
+    <g>
+      <rect x="54" y="160" width="198" height="108" rx="14" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <rect x="278" y="160" width="198" height="108" rx="14" fill="#E0F2FE" stroke="#7DD3FC"/>
+      <rect x="502" y="160" width="198" height="108" rx="14" fill="#DFF7F1" stroke="#5EEAD4"/>
+      <rect x="726" y="160" width="198" height="108" rx="14" fill="#FEF3C7" stroke="#FCD34D"/>
+      <rect x="950" y="160" width="196" height="108" rx="14" fill="#EDE9FE" stroke="#C4B5FD"/>
+      <g fill="#0F172A" font-size="17" font-weight="700" text-anchor="middle">
+        <text x="153" y="202">Define eligibility</text><text x="153" y="225">and estimand</text>
+        <text x="377" y="202">Estimate</text><text x="377" y="225">propensity scores</text>
+        <text x="601" y="202">Match 1:1</text><text x="601" y="225">within caliper</text>
+        <text x="825" y="202">Check balance</text><text x="825" y="225">and overlap</text>
+        <text x="1048" y="202">Estimate ATT</text><text x="1048" y="225">and robustness</text>
+      </g>
+      <g stroke="#94A3B8" stroke-width="3" fill="none">
+        <path d="M252 214 H275"/><path d="M476 214 H499"/><path d="M700 214 H723"/><path d="M924 214 H947"/>
+      </g>
+    </g>
+
+    <rect x="54" y="303" width="514" height="302" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="82" y="345" fill="#0F172A" font-size="21" font-weight="700">Balance is reviewed before outcomes</text>
+    <text x="82" y="371" fill="#64748B" font-size="14">Absolute standardized mean difference (SMD)</text>
+    <line x1="113" y1="549" x2="526" y2="549" stroke="#94A3B8"/>
+    <line x1="319" y1="396" x2="319" y2="549" stroke="#DC2626" stroke-dasharray="7 6" stroke-width="2"/>
+    <text x="327" y="411" fill="#B91C1C" font-size="13">0.10 threshold</text>
+    <g fill="#64748B" font-size="13">
+      <text x="78" y="437">Baseline score</text><text x="78" y="472">Prior service</text><text x="78" y="507">Region / urbanicity</text><text x="78" y="542">Age / sex</text>
+    </g>
+    <g stroke="#94A3B8" stroke-width="4"><line x1="204" y1="432" x2="431" y2="432"/><line x1="204" y1="467" x2="391" y2="467"/><line x1="204" y1="502" x2="366" y2="502"/><line x1="204" y1="537" x2="347" y2="537"/></g>
+    <g fill="#0F766E"><circle cx="284" cy="432" r="7"/><circle cx="269" cy="467" r="7"/><circle cx="249" cy="502" r="7"/><circle cx="256" cy="537" r="7"/></g>
+    <g fill="#64748B"><circle cx="431" cy="432" r="6"/><circle cx="391" cy="467" r="6"/><circle cx="366" cy="502" r="6"/><circle cx="347" cy="537" r="6"/></g>
+    <rect x="82" y="575" width="13" height="13" rx="6" fill="#64748B"/><text x="102" y="587" fill="#475569" font-size="13">Before matching</text>
+    <rect x="221" y="575" width="13" height="13" rx="6" fill="#0F766E"/><text x="241" y="587" fill="#475569" font-size="13">After matching</text>
+
+    <rect x="592" y="303" width="554" height="302" rx="16" fill="#0F172A"/>
+    <text x="624" y="345" fill="#F8FAFC" font-size="21" font-weight="700">Triangulated effect estimation</text>
+    <text x="624" y="384" fill="#5EEAD4" font-size="16" font-weight="700">Primary estimand</text>
+    <text x="624" y="420" fill="#FFFFFF" font-size="28" font-weight="700">ATT</text>
+    <text x="688" y="420" fill="#CBD5E1" font-size="16">average treatment effect on participants</text>
+    <line x1="624" y1="449" x2="1114" y2="449" stroke="#334155"/>
+    <g fill="#FFFFFF" font-size="17" font-weight="700">
+      <text x="650" y="489">Matched estimate</text><text x="650" y="531">Regression-adjusted estimate</text><text x="650" y="573">ATT-weighted estimate</text>
+    </g>
+    <g fill="#14B8A6"><circle cx="628" cy="483" r="7"/><circle cx="628" cy="525" r="7"/><circle cx="628" cy="567" r="7"/></g>
+    <rect x="921" y="470" width="193" height="96" rx="12" fill="#1E293B"/>
+    <text x="945" y="501" fill="#94A3B8" font-size="13" font-weight="700">INFERENCE</text>
+    <text x="945" y="529" fill="#FFFFFF" font-size="15">Site-clustered</text>
+    <text x="945" y="551" fill="#FFFFFF" font-size="15">standard errors</text>
+  </g>
+</svg>
