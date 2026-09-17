@@ -19,7 +19,7 @@ Among eligible participants, what was the effect of program participation on the
 5. Estimate the participant effect with site-clustered standard errors.
 6. Compare the matched estimate with adjusted-regression and ATT-weighted estimates.
 
-The estimand is the average treatment effect on the treated (ATT). The workflow treats the propensity model as a design tool: outcome results are not interpreted until common support and balance have been reviewed.
+The weighting target is the average treatment effect on the treated (ATT). Matching targets the **retained treated subset** when the caliper excludes participants. The workflow treats the propensity model as a design tool: outcome results are not interpreted until common support and balance have been reviewed. See the [outcome-blind design revision](docs/design-revision.md).
 
 ## Repository structure
 
@@ -40,22 +40,25 @@ data/
 
 ## Run the analysis
 
-With R 4.4 or later:
+With R 4.6.x (reference: 4.6.1):
 
 ~~~r
-install.packages(c(
-  "cobalt", "dplyr", "ggplot2", "lmtest",
-  "MatchIt", "readr", "sandwich", "tibble"
-))
+source("scripts/restore_environment.R")
 
 source("R/01_generate_synthetic_data.R")
 source("R/02_estimate_effects.R")
 source("R/03_diagnostics.R")
 ~~~
 
-The companion Stata workflow reads the same generated CSV and estimates matching and doubly robust models. It is included to demonstrate equivalent implementation across the two environments; GitHub Actions validates the R workflow because Stata requires a commercial license.
+The companion Stata workflow reads the same generated CSV but uses different matching, caliper, variance, and doubly robust estimation conventions. It is a teaching companion, **not a numerical replication** of the R results. Only R is executed in CI; Stata requires a commercial license.
 
 ## Outputs
+
+Read the [executed evaluation report](outputs/report.md) for matching flow, overlap, balance, estimates, and limitations.
+
+![Covariate balance before and after matching, synthetic data](assets/covariate-balance.svg)
+
+![Evaluation estimates and site-clustered 95% intervals, synthetic data](assets/effect-estimates.svg)
 
 Running the project creates:
 
@@ -75,3 +78,7 @@ Program evaluation · causal inference · propensity-score matching · balance d
 ## License
 
 MIT
+
+## Reproducible environment
+
+Restore dependencies with `Rscript scripts/restore_environment.R` before running the analysis from the repository root. See [environment notes](docs/environment.md) and the committed `renv.lock`.

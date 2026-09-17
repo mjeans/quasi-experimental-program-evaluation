@@ -5,3 +5,8 @@ data/synthetic_program_data.csv
 outputs/*.csv
 outputs/*.png
 analysis/*.html
+.r-library/
+renv/library/
+renv/staging/
+renv/cache/
+!outputs/*.csv
