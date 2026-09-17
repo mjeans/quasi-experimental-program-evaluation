@@ -28,7 +28,8 @@ matched_design <- matchit(
   distance = "glm",
   estimand = "ATT",
   ratio = 1,
-  caliper = 0.20,
+  # Locked after an outcome-blind balance audit; see docs/design-revision.md.
+  caliper = 0.10,
   std.caliper = TRUE,
   replace = FALSE
 )
@@ -37,6 +38,7 @@ matched_data <- match_data(matched_design)
 balance_object <- bal.tab(
   matched_design,
   un = TRUE,
+  binary = "std",
   thresholds = c(m = 0.10)
 )
 
@@ -52,18 +54,34 @@ balance_table <- balance_object$Balance |>
 
 write_csv(balance_table, "outputs/balance_table.csv")
 
+matching_flow <- bind_rows(lapply(0:1, function(group) {
+  before <- sum(evaluation_data$program == group)
+  after <- sum(matched_data$program == group)
+  tibble(group = c("Comparison", "Program")[group + 1],
+         before = before, matched = after, unmatched = before - after,
+         retained_percent = 100 * after / before)
+}))
+write_csv(matching_flow, "outputs/matching_flow.csv")
+matched_label <- if (any(matching_flow$unmatched[matching_flow$group == "Program"] > 0)) {
+  "Matched-treated subset"
+} else "Matched ATT"
+
 clustered_program_effect <- function(model, data, label) {
   variance <- vcovCL(model, cluster = data$site_id, type = "HC1")
   estimate <- unname(coef(model)["program"])
   std_error <- unname(sqrt(diag(variance))["program"])
+  clusters <- length(unique(data$site_id))
+  critical <- qt(.975, df = clusters - 1)
 
   tibble(
     estimator = label,
     estimate = estimate,
     std_error = std_error,
-    conf_low = estimate - 1.96 * std_error,
-    conf_high = estimate + 1.96 * std_error,
-    n = nobs(model)
+    conf_low = estimate - critical * std_error,
+    conf_high = estimate + critical * std_error,
+    n = nobs(model),
+    clusters = clusters,
+    degrees_freedom = clusters - 1
   )
 }
 
@@ -118,7 +136,7 @@ effect_estimates <- bind_rows(
   clustered_program_effect(
     matched_model,
     matched_data,
-    "Matched ATT"
+    matched_label
   ),
   clustered_program_effect(
     weighted_model,
@@ -136,8 +154,13 @@ effect_estimates <- bind_rows(
 write_csv(effect_estimates, "outputs/effect_estimates.csv")
 
 max_matched_smd <- max(abs(balance_table$smd_matched), na.rm = TRUE)
-if (!is.finite(max_matched_smd) || max_matched_smd >= 0.10) {
-  warning("At least one matched standardized difference is 0.10 or greater.")
-}
+stopifnot(is.finite(max_matched_smd), max_matched_smd < 0.10)
+
+write_csv(tibble(group = c("Program", "Comparison"),
+  effective_n = sapply(1:0, function(g) {
+    w <- evaluation_data$att_weight[evaluation_data$program == g]
+    sum(w)^2 / sum(w^2)
+  }), maximum_weight = sapply(1:0, function(g) max(evaluation_data$att_weight[evaluation_data$program == g]))),
+  "outputs/weight_diagnostics.csv")
 
 print(effect_estimates)

@@ -16,10 +16,12 @@ jobs:
       - uses: actions/checkout@v6
       - uses: r-lib/actions/setup-r@v2
         with:
+          r-version: "4.6.1"
           use-public-rspm: true
-      - name: Install dependencies
-        run: >-
-          Rscript -e 'install.packages(c("cobalt", "dplyr", "ggplot2", "lmtest", "MatchIt", "readr", "sandwich", "tibble"))'
+      - name: Install graphics system libraries
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev libfreetype6-dev libharfbuzz-dev libfribidi-dev
+      - name: Restore versioned R environment
+        run: Rscript scripts/restore_environment.R
       - name: Generate data and estimate effects
         run: |
           Rscript R/01_generate_synthetic_data.R
@@ -28,3 +30,5 @@ jobs:
       - name: Confirm required outputs
         run: >-
           Rscript -e 'stopifnot(file.exists("outputs/effect_estimates.csv"), file.exists("outputs/balance_table.csv"), file.exists("outputs/love_plot.png"), file.exists("outputs/propensity_overlap.png"))'
+      - name: Test numerical diagnostics and published results
+        run: Rscript tests/test_analysis.R

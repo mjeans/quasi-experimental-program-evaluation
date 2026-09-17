@@ -1,0 +1,5 @@
+estimator,estimate,std_error,conf_low,conf_high,n,clusters,degrees_freedom
+Unadjusted difference,-0.074,0.327,-0.728,0.581,2400,60,59
+Regression adjusted,2.996,0.264,2.468,3.524,2400,60,59
+Matched-treated subset,3.002,0.3,2.402,3.603,1836,60,59
+ATT weighted,2.941,0.297,2.348,3.535,2400,60,59

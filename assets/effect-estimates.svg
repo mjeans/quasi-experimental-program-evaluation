@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg role="img" aria-labelledby="title desc" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='720.00pt' height='432.00pt' viewBox='0 0 720.00 432.00'><title id="title">Evaluation estimates with uncertainty</title><desc id="desc">Four descriptive or adjusted estimates; intervals use site-clustered standard errors and a t reference.</desc>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='0.00' y='0.000000000000057' width='720.00' height='432.00' style='stroke-width: 1.36; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMTM1LjcyfDcwNC4wNnw1NC40NHwzNjkuNjA='>
+    <rect x='135.72' y='54.44' width='568.34' height='315.17' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTM1LjcyfDcwNC4wNnw1NC40NHwzNjkuNjA=)'>
+<polyline points='135.72,324.58 704.06,324.58 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='135.72,249.54 704.06,249.54 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='135.72,174.50 704.06,174.50 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='135.72,99.46 704.06,99.46 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='248.40,369.60 248.40,54.44 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='367.70,369.60 367.70,54.44 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='486.99,369.60 486.99,54.44 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='606.29,369.60 606.29,54.44 ' style='stroke-width: 1.36; stroke: #EBEBEB; stroke-linecap: butt;' />
+<line x1='248.40' y1='369.60' x2='248.40' y2='54.44' style='stroke-width: 1.36; stroke: #687B89; stroke-dasharray: 7.24,7.24; stroke-linecap: butt;' />
+<line x1='161.55' y1='99.46' x2='317.71' y2='99.46' style='stroke-width: 2.13; stroke: #087E83; stroke-linecap: butt;' />
+<line x1='542.82' y1='174.50' x2='668.80' y2='174.50' style='stroke-width: 2.13; stroke: #087E83; stroke-linecap: butt;' />
+<line x1='534.95' y1='249.54' x2='678.23' y2='249.54' style='stroke-width: 2.13; stroke: #087E83; stroke-linecap: butt;' />
+<line x1='528.51' y1='324.58' x2='670.11' y2='324.58' style='stroke-width: 2.13; stroke: #087E83; stroke-linecap: butt;' />
+<circle cx='239.57' cy='99.46' r='3.65' style='stroke-width: 0.90; stroke: #087E83; fill: #087E83;' />
+<circle cx='605.81' cy='174.50' r='3.65' style='stroke-width: 0.90; stroke: #087E83; fill: #087E83;' />
+<circle cx='606.53' cy='249.54' r='3.65' style='stroke-width: 0.90; stroke: #087E83; fill: #087E83;' />
+<circle cx='599.25' cy='324.58' r='3.65' style='stroke-width: 0.90; stroke: #087E83; fill: #087E83;' />
+</g>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='129.44' y='328.59' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='67.97px' lengthAdjust='spacingAndGlyphs'>ATT weighted</text>
+<text x='129.44' y='253.55' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='117.48px' lengthAdjust='spacingAndGlyphs'>Matched-treated subset</text>
+<text x='129.44' y='178.51' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='101.95px' lengthAdjust='spacingAndGlyphs'>Regression adjusted</text>
+<text x='129.44' y='103.47' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='108.59px' lengthAdjust='spacingAndGlyphs'>Unadjusted difference</text>
+<text x='248.40' y='383.89' text-anchor='middle' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='6.22px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='367.70' y='383.89' text-anchor='middle' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='6.22px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='486.99' y='383.89' text-anchor='middle' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='6.22px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='606.29' y='383.89' text-anchor='middle' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='6.22px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='419.89' y='399.76' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='215.98px' lengthAdjust='spacingAndGlyphs'>Outcome-point difference (95% CI)</text>
+<text x='135.72' y='44.52' style='font-size: 14.00px;fill: #687B89; font-family: "Arial";' textLength='419.27px' lengthAdjust='spacingAndGlyphs'>Synthetic data; site-clustered HC1 variance and t intervals (G - 1 df)</text>
+<text x='135.72' y='23.99' style='font-size: 16.80px; font-weight: bold;fill: #142D42; font-family: "Arial";' textLength='307.19px' lengthAdjust='spacingAndGlyphs'>Effect estimates depend on the design</text>
+<text x='704.06' y='417.69' text-anchor='end' style='font-size: 11.20px; font-family: "Arial";' textLength='410.31px' lengthAdjust='spacingAndGlyphs'>Matched-treated subset and full treated population are not interchangeable targets.</text>
+</g>
+</g>
+</svg>
